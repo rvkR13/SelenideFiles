@@ -21,6 +21,9 @@ public class SelenideFilesTest {
     File download;
     String result;
 
+    /**
+     * Тест на загрузку файла txt и проверки содежимого
+     */
     @Test
     @DisplayName("Загрузка файла .txt и его проверка")
     void downloadFileTest() throws Exception {
@@ -37,7 +40,9 @@ public class SelenideFilesTest {
             });
         }
     }
-
+    /**
+     * Тест на загрузку файла pdf и проверки содежимого
+     */
     @Test
     void downloadPdfTest() throws Exception {
         open("https://junit.org/junit5/docs/current/user-guide/");
@@ -48,7 +53,9 @@ public class SelenideFilesTest {
         assertThat(pdf.numberOfPages).isEqualTo(180);
         assertThat(pdf.text.contains("By default, it will only include test classes whose names either begin")).isTrue();
     }
-
+    /**
+     * Тест на загрузку файла xls и проверки содежимого
+     */
     @Test
     void downloadXlsTest() throws Exception {
         open("https://github.com/rvkR13/AllureReports/blob/main/1с.xls");
@@ -74,4 +81,7 @@ public class SelenideFilesTest {
         assertThat(zipFile.getFile().canRead()).isTrue();
 
     }
+    /**
+     *
+     */
 }
