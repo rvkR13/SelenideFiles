@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.11.2"
+}
+
+repositories {
+    mavenCentral()
+}
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+dependencies {
+    implementation 'com.seanox:seanox-pdf-service:4.3.0'
+    implementation 'com.codeborne:pdf-test:1.8.0'
+
+// Selenide
+    testImplementation('com.codeborne:selenide:5.24.2',
+            'io.qameta.allure:allure-selenide:2.15.0')
+    testImplementation 'org.testng:testng:7.1.0'
+
+    testRuntimeOnly('org.slf4j:slf4j-simple:1.7.32')
+//JUnit 5
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.2",
+            'org.junit.jupiter:junit-jupiter-params:5.7.2')
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
+
+    //Allure аннотации
+    implementation'io.qameta.allure:allure-rest-assured:2.17.3'
+    testImplementation 'io.qameta.allure:allure-junit5:2.17.3'
+//https://search.maven.org/artifact/ru.yandex.qatools.ashot/ashot/1.5.4/jar
+    implementation 'ru.yandex.qatools.ashot:ashot:1.5.4'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.2.3'
+// https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+// https://mvnrepository.com/artifact/com.codeborne/pdf-test
+    implementation 'com.codeborne:pdf-test:1.8.0'
+// https://mvnrepository.com/artifact/com.codeborne/xls-test
+    implementation 'com.codeborne:xls-test:1.7.0'
+// https://mvnrepository.com/artifact/net.lingala.zip4j/zip4j
+    implementation 'net.lingala.zip4j:zip4j:2.11.4'
+
+}
+test {
+    useJUnitPlatform()
+}
