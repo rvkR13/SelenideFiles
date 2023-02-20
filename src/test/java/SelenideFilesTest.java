@@ -53,7 +53,9 @@ public class SelenideFilesTest {
         assertThat(pdf.numberOfPages).isEqualTo(180);
         assertThat(pdf.text.contains("By default, it will only include test classes whose names either begin")).isTrue();
     }
-
+    /**
+     * Тест на загрузку файла xls и проверки содежимого
+     */
     @Test
     void downloadXlsTest() throws Exception {
         open("https://github.com/rvkR13/AllureReports/blob/main/1с.xls");
