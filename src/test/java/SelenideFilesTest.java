@@ -21,6 +21,9 @@ public class SelenideFilesTest {
     File download;
     String result;
 
+    /**
+     * Тест на загрузку файла txt и проверки содежимого
+     */
     @Test
     @DisplayName("Загрузка файла .txt и его проверка")
     void downloadFileTest() throws Exception {
@@ -74,4 +77,7 @@ public class SelenideFilesTest {
         assertThat(zipFile.getFile().canRead()).isTrue();
 
     }
+    /**
+     *
+     */
 }
