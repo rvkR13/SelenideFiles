@@ -40,7 +40,9 @@ public class SelenideFilesTest {
             });
         }
     }
-
+    /**
+     * Тест на загрузку файла pdf и проверки содежимого
+     */
     @Test
     void downloadPdfTest() throws Exception {
         open("https://junit.org/junit5/docs/current/user-guide/");
